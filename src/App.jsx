@@ -62,6 +62,8 @@ function App() {
     const newTasks = tasks.filter((task) => task.id != taskId)
     setTasks(newTasks)   
     };
+
+    // so para dar commit no github
   
 
     function AdicionarTarefa(title , description)
