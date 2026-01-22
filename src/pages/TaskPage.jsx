@@ -8,7 +8,7 @@ function TaskPage() {
   const navigate = useNavigate()
   return (
     <div className="bg-slate-500 p-6 w-screen h-screen">
-      <div className="w-[500px] space-y-2">
+      <div className="w-[500px] space-y-2 mx-auto">
         <div className="flex justify-center relative mb-6 ">
           <button onClick={() => navigate(-1)} className="absolute left-0 top-0 bottom-0">
              <ChevronLeftIcon/>
