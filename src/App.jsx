@@ -40,7 +40,7 @@ function App() {
        console.log(data)
        setTasks(data)
    }
-
+ 
      fetchTasks()
   } , [])
   // lista vazia faz com que so seja executado uma vez ( quando o user esntra na aplicacao pela 1st vez)
