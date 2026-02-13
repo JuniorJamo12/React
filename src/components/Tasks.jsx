@@ -1,4 +1,4 @@
-import { ChevronRightIcon, TrashIcon } from "lucide-react";
+import { CheckIcon, ChevronRightIcon, TrashIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
@@ -8,11 +8,11 @@ function Tasks(props) {
   const navigate = useNavigate();
 
   function seeDetails(task) {
-    const querry = new URLSearchParams()
-    querry.set("title" , task.title)
-    querry.set("description" , task.description)
+    const querry = new URLSearchParams();
+    querry.set("title", task.title);
+    querry.set("description", task.description);
     navigate(`/task?${querry.toString()}`);
-  }
+  } 
 
   return (
     <ul className="space-y-4 p-6 shadow bg-slate-200 rounded-md ">
@@ -20,17 +20,15 @@ function Tasks(props) {
         <li key={task.id} className="flex gap-2">
           <button
             onClick={() => props.checkList(task.id)}
-            className="bg-slate-400 text-left text-white p-2 rounded-md w-full space-y-4b"
+            className="bg-slate-400 text-left text-white p-2 rounded-md w-full space-y-4b flex items-center gap-3"
           >
+            {task.isCompleted ? <CheckIcon/> :null } 
             {task.title}
             {/* {task.isCompleted ? "COMPLETED" : "INCOMPLETED"} */}
-            
-          </button>
+          </button> 
 
-          <Button
-              onClick={() => seeDetails(task)}
-          >
-             <ChevronRightIcon/>
+          <Button onClick={() => seeDetails(task)}>
+            <ChevronRightIcon />
           </Button>
 
           <Button
